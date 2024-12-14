@@ -19,7 +19,7 @@ public class Client {
     private String address;
     private String cityResidence;
     private String typeDNI;
-    private String numberDNI;
+    private Long numberDNI;
 
     public Client(
         String firstName,
@@ -30,7 +30,7 @@ public class Client {
         String address,
         String cityResidence,
         String typeDNI,
-        String numberDNI
+        Long numberDNI
     ) {
         this.firstName = firstName;
         this.middleName = middleName;
@@ -82,7 +82,7 @@ public class Client {
         return this.typeDNI;
     }
 
-    public String getNumberDNI() {
+    public Long getNumberDNI() {
         return this.numberDNI;
     }
 
@@ -122,7 +122,7 @@ public class Client {
         this.typeDNI = typeDNI;
     }
 
-    public void setNumberDNI(String numberDNI) {
+    public void setNumberDNI(Long numberDNI) {
         this.numberDNI = numberDNI;
     }
 
