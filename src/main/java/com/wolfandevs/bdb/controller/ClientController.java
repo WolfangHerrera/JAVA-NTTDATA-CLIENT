@@ -18,7 +18,7 @@ import com.wolfandevs.bdb.service.ClientRepository;
 
 @RestController
 @RequestMapping("/api/getClient")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "https://app-nttdata.wolfangdevs.com")
 public class ClientController {
 
     @Autowired
@@ -30,13 +30,13 @@ public class ClientController {
 
             if (numberDNI == null) {
                 Map<String, String> errorResponse = new HashMap<>();
-                errorResponse.put("message", "'numberDNI' is required and cannot be empty or null.");
+                errorResponse.put("message", "'DOCUMENT NUMBER' IS REQUIRED.");
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
             }
 
             if (!typeDNI.equals("C") && !typeDNI.equals("P")) {
                 Map<String, String> errorResponse = new HashMap<>();
-                errorResponse.put("message", "Invalid 'typeDNI' value. It must be 'C' or 'P'.");
+                errorResponse.put("message", "INVALID 'DOCUMENT TYPE' VALUE.");
                 return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(errorResponse);
             }
 
@@ -47,7 +47,7 @@ public class ClientController {
                 return ResponseEntity.ok(client.get());
             } else {
                 Map<String, String> response = new HashMap<>();
-                response.put("message", "Client not found with typeDNI: " + typeDNI + " and numberDNI: " + numberDNI);
+                response.put("message", "CUSTOMER NOT FOUND WITH DOCUMENT NUMBER: " + numberDNI);
                 return ResponseEntity.status(HttpStatus.NOT_FOUND).body(response);
             }
 

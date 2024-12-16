@@ -19,6 +19,7 @@ public class BdbApplication {
     public CommandLineRunner init(ClientRepository clientRepository) {
         return args -> {
             clientRepository.save(new Client("Wolfang", "Andrey", "Herrera", "Casallas", "3134508405", "123 Main St", "New York", "C", 23445322L));
+            clientRepository.save(new Client("Laura", "Valentina", "Tellez", "Cuellar", "3115305972", "123 Main St", "New York", "P", 1025520565L));
         };
     }
 
